@@ -26,7 +26,7 @@ import com.work.model.User;
 public class DBConfiguration
  {
 		//<bean id="" class="">
-		@Bean
+		@Bean(name="datasource")
 		public DataSource getDataSource() {
 		    BasicDataSource dataSource = new BasicDataSource();
 		    dataSource.setDriverClassName("org.h2.Driver");
