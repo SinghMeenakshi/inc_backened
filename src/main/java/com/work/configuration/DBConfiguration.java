@@ -13,7 +13,12 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.work.model.Authorities;
+import com.work.model.Booking;
+import com.work.model.Category;
 import com.work.model.Pack;
+import com.work.model.Tourist;
+import com.work.model.User;
 
 
 @Configuration
@@ -40,7 +45,7 @@ public class DBConfiguration
 			hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 			hibernateProperties.setProperty("hibernate.show_sql", "true");
 			lsf.addProperties(hibernateProperties);
-			Class classes[]=new Class[]{Pack.class};
+			Class classes[]=new Class[]{Pack.class,Category.class,User.class,Authorities.class,Booking.class,Category.class,Tourist.class};
 		    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 		}
 		@Bean
