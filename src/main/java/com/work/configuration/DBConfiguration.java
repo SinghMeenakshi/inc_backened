@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.work.model.Authorities;
+import com.work.model.BookTour;
 import com.work.model.Booking;
 import com.work.model.Category;
 import com.work.model.Pack;
@@ -26,7 +27,7 @@ import com.work.model.User;
 public class DBConfiguration
  {
 		//<bean id="" class="">
-		@Bean(name="datasource")
+		@Bean(name="dataSource")
 		public DataSource getDataSource() {
 		    BasicDataSource dataSource = new BasicDataSource();
 		    dataSource.setDriverClassName("org.h2.Driver");
@@ -45,7 +46,7 @@ public class DBConfiguration
 			hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 			hibernateProperties.setProperty("hibernate.show_sql", "true");
 			lsf.addProperties(hibernateProperties);
-			Class classes[]=new Class[]{Pack.class,Category.class,User.class,Authorities.class,Booking.class,Category.class,Tourist.class};
+			Class classes[]=new Class[]{Pack.class,Category.class,User.class,Authorities.class,Booking.class,Category.class,Tourist.class,Booking.class,BookTour.class};
 		    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 		}
 		@Bean

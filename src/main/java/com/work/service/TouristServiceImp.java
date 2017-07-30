@@ -29,4 +29,9 @@ public class TouristServiceImp implements TouristService {
 		return touristDao.validateEmail(email);
 	}
 
+	public Tourist getTouristByUsername(String username) {
+		// TODO Auto-generated method stub
+		return touristDao.getTouristByUsername(username);
+	}
+
 }

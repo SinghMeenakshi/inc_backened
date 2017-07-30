@@ -8,4 +8,5 @@ public interface TouristDao
 	void registerTourist(Tourist tourist);
 	User validateUsername (String username);
 	Tourist validateEmail(String email);
+	Tourist getTouristByUsername(String username);
 }

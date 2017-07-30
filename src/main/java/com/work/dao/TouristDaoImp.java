@@ -51,4 +51,12 @@ public class TouristDaoImp implements TouristDao
 		Tourist tourist=(Tourist)query.uniqueResult();
 		return tourist;
 	}
+	public Tourist getTouristByUsername(String username) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from Tourist where user.username=?");
+		query.setString(0, username);
+		Tourist tourist=(Tourist)query.uniqueResult();
+		return tourist ;
+	}
 }
