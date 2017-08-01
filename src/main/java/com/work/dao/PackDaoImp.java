@@ -17,7 +17,6 @@ import com.work.model.Pack;
 public class PackDaoImp implements PackDao {
 
 	@Autowired
-
 	private SessionFactory sessionFactory;
 
 	public void savePack(Pack pack) {

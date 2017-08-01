@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.work.dao.BookTourDao;
 import com.work.model.BookTour;
+import com.work.model.Booking;
 
 @Service
 @Transactional
@@ -27,6 +28,10 @@ public class BookTourServiceImp implements BookTourService{
 	public void removeAllBookTours(int bookingId) {
 		bookTourDao.removeAllBookTours(bookingId);
 		
+	}
+
+	public Booking getBookingOrder(int bookingId) {
+		return bookTourDao.getBookingOrder(bookingId);
 	}
 
 }

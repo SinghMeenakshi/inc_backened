@@ -19,6 +19,7 @@ import com.work.model.Booking;
 import com.work.model.Category;
 import com.work.model.Pack;
 import com.work.model.Tourist;
+import com.work.model.TouristOrder;
 import com.work.model.User;
 
 
@@ -46,7 +47,7 @@ public class DBConfiguration
 			hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 			hibernateProperties.setProperty("hibernate.show_sql", "true");
 			lsf.addProperties(hibernateProperties);
-			Class classes[]=new Class[]{Pack.class,Category.class,User.class,Authorities.class,Booking.class,Category.class,Tourist.class,Booking.class,BookTour.class};
+			Class classes[]=new Class[]{Pack.class,Category.class,User.class,Authorities.class,Booking.class,Category.class,Tourist.class,Booking.class,BookTour.class,TouristOrder.class};
 		    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 		}
 		@Bean

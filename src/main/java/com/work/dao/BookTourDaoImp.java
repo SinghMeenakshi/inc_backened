@@ -39,5 +39,11 @@ public class BookTourDaoImp implements BookTourDao {
 		
 	}
 
+	public Booking getBookingOrder(int bookingId) {
+		Session session=sessionFactory.getCurrentSession();
+		Booking booking=(Booking)session.get(Booking.class, bookingId);
+		return booking;
+	}
+
 	
 }
