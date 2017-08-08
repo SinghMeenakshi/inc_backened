@@ -34,11 +34,11 @@ public class Tourist
 	private String villano;
 	@NotEmpty
 	private String city;
-	@NotEmpty
+	@NotEmpty(message="state plz")
 	private String state;
 	@NotEmpty
 	private String country;
-	@NotEmpty
+	@Size(max=6,min=6)
 	private String zipcode;
 	@Size(max=10,min=10)
 	private String phone;
