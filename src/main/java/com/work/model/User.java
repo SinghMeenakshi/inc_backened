@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -17,7 +18,8 @@ public class User
 	private int  id;
 	@Column(unique=true,nullable=false)
 	private String username;
-	@NotEmpty
+	@Size(min=8)
+	@NotEmpty(message="must contain atleast 8 or more characters")
 	private String password;
 	private boolean enabled;
 	
